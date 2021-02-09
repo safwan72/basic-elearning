@@ -1,0 +1,21 @@
+{% extends "Base.html" %}
+{% load crispy_forms_tags %}
+{% block title_block %}
+  Add Questions
+{% endblock %}
+
+{% block body_block %}
+<div class="container my-5">
+  <form method="post">
+    {{form|crispy}}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-info btn-lg my-3"> Add New Question </button>
+    <a href="{% url 'App_Quiz:question' %}" class="btn btn-warning btn-lg my-3"> Done Adding Questions?</a>
+  </form>
+  <br>
+  
+  
+</div>
+
+
+{% endblock %}

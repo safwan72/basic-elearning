@@ -1,0 +1,44 @@
+{% extends "Base.html" %}
+{% load crispy_forms_tags %}
+{% block title_block %}
+  Add Questions
+{% endblock %}
+
+{% block body_block %}
+<table class="table table-hover my-5 table-borderless table-sm">
+    <caption> Questions </caption>
+    <thead>
+        <tr>
+          <th scope="col">Serial</th>
+          <th scope="col">Question</th>
+          <th scope="col">Correct Answer</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      {% for question in form  %}
+      <tbody>
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{question.ques}}</td>
+          <td>{{question.correct_ans}}</td>
+          <td><a href="{% url 'App_Quiz:add_question' pk=question.pk %}" class="btn btn-info">Add To Quiz</a></td>
+          <td><a href="" class="btn btn-danger">Remove from Question Section</a></td>
+        </tr>
+        </tbody>
+        {% empty %}
+        <p>{{message}}</p>
+
+        {% endfor %}  
+
+  </table>
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+        </div>
+    <div class="col-md-6 mx-auto">
+      <a href="{% url 'App_Quiz:quiz' %}" class="btn btn-secondary my-4 mx-2">Back to Adding new Questions</a>
+      <a href="{% url 'App_Quiz:create_quiz'  %}" class="btn btn-success my-4 mx-2">Continue to Create a Quiz</a>
+    </div>
+  </div>
+{% endblock %}

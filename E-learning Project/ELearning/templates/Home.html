@@ -1,0 +1,50 @@
+{% extends "Base.html" %}
+{% load crispy_forms_tags %}
+{% block title_block %}
+Add Questions
+{% endblock %}
+
+{% block body_block %}
+<h1 class="my-5 text-center">Welcome To E-Learning Platform </h1>
+
+<div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+    <!-- <div class="col">
+        <a href="" class="link-dark text-decoration-none" title="Home">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Home</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col">
+        <a href="" class="link-dark text-decoration-none" title="Login">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                </div>
+            </div>
+        </a>
+    </div> -->
+    <div class="col">
+        <a href="{% url 'App_Article:article_home' %}" class="link-dark text-decoration-none" title="Article">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Articles</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col">
+        <a href="{% url 'App_Quiz:allQuizes' %}" class="link-dark text-decoration-none" title="Quizes">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Quizes</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "Base.html" %}
+
+{% block body_block %}
+
+<h1 class="text-center mt-4">All Quizes to Attend</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4 my-5">
+
+    {% for quiz in quiz %}
+
+    <div class="col">
+        <a href="" class="link-dark text-decoration-none" title="Home">
+            <div class="card p-3">
+                <div class="card-body">
+                    <h3 class="card-title text-center"> {{quiz.quiz.title}}
+                    </h3>
+                    <h5 class="text-center text-danger"> Teacher - {{quiz.quiz.creator}}</h5>
+                    <h6 class="card-text text-center"> {{quiz.quiz.quiz.count}} Questions </h6>
+                    <h6 class="card-text text-center"> {{quiz.total_attendees.count}} Attended </h6>
+                    
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock body_block %}
