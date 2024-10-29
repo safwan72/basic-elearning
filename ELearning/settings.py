@@ -19,7 +19,6 @@ STATIC_DIR=BASE_DIR/'static'
 MEDIA_DIR=BASE_DIR/'media'
 
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -35,16 +34,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'crispy_forms',
-    'App_Login',
-    'App_Article',
-    'App_Quiz',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "crispy_forms",
+    "crispy_bootstrap4",
+    "App_Login",
+    "App_Article",
+    "App_Quiz",
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
@@ -77,6 +77,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ELearning.wsgi.application'
 AUTH_USER_MODEL='App_Login.User'
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -131,7 +132,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[STATIC_DIR,]
+STATIC_ROOT = BASE_DIR/'static'
 MEDIA_URL='/media/'
 MEDIA_ROOT=MEDIA_DIR
 LOGIN_URL='/accounts/login/'
